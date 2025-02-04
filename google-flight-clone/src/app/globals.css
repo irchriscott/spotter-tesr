@@ -1,0 +1,109 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@import 'primereact/resources/themes/tailwind-light/theme.css' layer(primereact);
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #202124;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #202124;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-bg-image {
+  height: 24vh;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate3d(-50%,0,0);
+  min-height: 136px;
+  max-height: 298px;
+}
+
+.p-dropdown-label, .p-inputtext {
+  box-shadow: none !important;
+}
+
+.p-dropdown-item .p-dropdown-item-label {
+  font-size: .875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.p-dropdown:focus, 
+.p-dropdown:active,
+.p-button-text:focus,
+.p-button-text:active {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: #EEE !important;
+}
+
+.p-button-icon-only:active,
+.p-button-icon-only:focus,
+.p-button-secondary:active,
+.p-button-secondary:focus {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.p-dropdown:hover,
+.p-button-text:hover {
+  background-color: #EEE !important;
+}
+
+.p-dropdown.p-inputwrapper-focus {
+  border: none !important;
+  background-color: #EEE !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.p-icon-field {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+}
+
+.p-icon-field .p-inputtext {
+  margin-left: 30px !important;
+}
+
+.p-icon-field-left .p-input-icon {
+  margin-left: 10px !important;
+}
+
+.p-calendar {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem 0 1rem 1.5rem;
+}
+
+.text-sm-dropdown .p-dropdown-trigger {
+  margin-top: 0.2rem !important;
+}
+
+.airline-logo-image img {
+  border-radius: 4px !important;
+}
