@@ -25,8 +25,6 @@ function FlightDetails ({ flight, index }: FlightDetailsProps) {
 
     const [showDetails, setShowDetails] = useState(false);
 
-    console.log(flight);
-
     return (
         <div>
             <div onClick={() => {setShowDetails((v) => !v)}} style={{borderBottom: '1px solid #eee'}} className='grid grid-cols-11 gap-2 px-5 py-4 cursor-pointer hover:bg-gray-100' key={index}>
@@ -34,9 +32,9 @@ function FlightDetails ({ flight, index }: FlightDetailsProps) {
                     <Image src={flight.legs[0].carriers.marketing[0].logoUrl} alt={flight.legs[0].carriers.marketing[0].name} width='45' height='45' className='airline-logo-image' />
                 </div>
                 <div className='px-2 col-span-3 items-center'>
-                    <Tooltip key="depature" target=".depature-time-flight" position="top" content={formatDateTimeDetails(flight.legs[0].departure)} />
-                    <Tooltip key="arrival" target=".arrival-time-flight" position="top" content={formatDateTimeDetails(flight.legs[0].arrival)} />
-                    <p className='font-bold text-l'><span className='depature-time-flight'>{formatDateToTime(flight.legs[0].departure)}</span> - <span className='arrival-time-flight'>{formatDateToTime(flight.legs[0].arrival)}</span></p>
+                    <Tooltip key="depature" target={`.depature-time-flight-${index}`} position="top" content={formatDateTimeDetails(flight.legs[0].departure)} />
+                    <Tooltip key="arrival" target={`.arrival-time-flight-${index}`} position="top" content={formatDateTimeDetails(flight.legs[0].arrival)} />
+                    <p className='font-bold text-l'><span className={`depature-time-flight-${index}`}>{formatDateToTime(flight.legs[0].departure)}</span> - <span className={`arrival-time-flight-${index}`}>{formatDateToTime(flight.legs[0].arrival)}</span></p>
                     <p className='font-medium text-sm'>{flight.legs[0].carriers.marketing[0].name}{flight.legs[0].carriers.operating && (<span> • {flight.legs[0].carriers.operating[0].name}</span>)}</p>
                 </div>
                 <div className='px-2 col-span-2 items-center'>
